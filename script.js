@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cardAnimation();
 
+    welcomeAnimation();
+
 });
 
 
@@ -111,5 +113,21 @@ function pageTop(){
         behavior:"smooth"
 
     });
+
+}
+
+// ================================
+// Welcome Animation
+// ================================
+
+function welcomeAnimation(){
+
+    const welcome=document.getElementById("welcome-screen");
+
+    setTimeout(()=>{
+
+        welcome.classList.add("hide");
+
+    },2500);
 
 }
