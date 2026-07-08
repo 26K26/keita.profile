@@ -4,8 +4,10 @@ N:津路;圭太;;;
 FN:津路 圭太
 ORG:田辺市立中辺路中学校
 TITLE:１年担任・数学科
+TEL;TYPE=WORK,VOICE:0739640243
 TEL;TYPE=CELL:09050589566
-EMAIL:tt20250035@tanabe,ed,jp
+EMAIL;TYPE=WORK:nakahechi-jhs@tanabe.ed.jp
+EMAIL;TYPE=HOME:tt20250035@tanabe.ed.jp
 URL:https://26K26.github.io/digital-profile/
-NOTE:ICTを活用した授業づくりと教材開発に取り組んでいます。
+NOTE:田辺市立中辺路中学校 １年担任・数学科
 END:VCARD
