@@ -332,3 +332,476 @@ body{
     color:var(--primary);
 
 }
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+.button{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    width:100%;
+
+    padding:16px 18px;
+
+    margin-bottom:15px;
+
+    border-radius:var(--button-radius);
+
+    background:rgba(75,108,183,.92);
+
+    color:var(--white);
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    letter-spacing:.03em;
+
+    box-shadow:var(--button-shadow);
+
+    overflow:hidden;
+
+    transition:
+        transform var(--speed),
+        box-shadow var(--speed),
+        background var(--speed);
+
+}
+
+.button:last-child{
+
+    margin-bottom:0;
+
+}
+
+.button i{
+
+    font-size:1.15rem;
+
+}
+
+.button::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:-120%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transition:.6s;
+
+}
+
+.button:hover{
+
+    transform:translateY(-3px);
+
+    background:var(--primary-dark);
+
+    box-shadow:
+        0 12px 28px rgba(75,108,183,.35);
+
+}
+
+.button:hover::after{
+
+    left:120%;
+
+}
+
+.button:active{
+
+    transform:scale(.98);
+
+}
+
+
+/* Primary Button */
+
+.button.primary{
+
+    background:linear-gradient(
+        135deg,
+        #4b6cb7,
+        #182848
+    );
+
+    box-shadow:
+        0 12px 30px rgba(75,108,183,.35);
+
+}
+
+.button.primary:hover{
+
+    background:linear-gradient(
+        135deg,
+        #3d5aa6,
+        #14213d
+    );
+
+}
+
+
+/* ==========================================================
+   Footer
+========================================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:35px 0 10px;
+
+    color:var(--subtext);
+
+}
+
+footer p{
+
+    margin-bottom:8px;
+
+    font-size:.95rem;
+
+}
+
+footer small{
+
+    font-size:.8rem;
+
+    opacity:.8;
+
+}
+
+
+/* ==========================================================
+   Mathematical Background
+========================================================== */
+
+body::before{
+
+    content:"π   √   Σ   x²   y=ax+b   ∞   Δ   θ";
+
+    position:fixed;
+
+    top:12%;
+    left:-8%;
+
+    width:120%;
+
+    color:rgba(75,108,183,.055);
+
+    font-size:3.2rem;
+
+    font-weight:700;
+
+    letter-spacing:1.4rem;
+
+    white-space:nowrap;
+
+    transform:rotate(-12deg);
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    animation:mathFloat 22s linear infinite;
+
+}
+
+body::after{
+
+    content:"a²+b²=c²   ∫   3.14   √2   f(x)";
+
+    position:fixed;
+
+    bottom:12%;
+    right:-10%;
+
+    width:120%;
+
+    color:rgba(75,108,183,.045);
+
+    font-size:2.5rem;
+
+    font-weight:700;
+
+    letter-spacing:1.2rem;
+
+    white-space:nowrap;
+
+    transform:rotate(-10deg);
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    animation:mathFloatReverse 26s linear infinite;
+
+}
+
+
+/* ==========================================================
+   Animations
+========================================================== */
+
+@keyframes welcomeFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(18px) scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes mathFloat{
+
+    0%{
+
+        transform:translateX(0) rotate(-12deg);
+
+    }
+
+    100%{
+
+        transform:translateX(8%) rotate(-12deg);
+
+    }
+
+}
+
+@keyframes mathFloatReverse{
+
+    0%{
+
+        transform:translateX(0) rotate(-10deg);
+
+    }
+
+    100%{
+
+        transform:translateX(-8%) rotate(-10deg);
+
+    }
+
+}
+
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media(max-width:600px){
+
+    .container{
+
+        width:min(92%,480px);
+
+        padding:
+            35px
+            0
+            45px;
+
+    }
+
+    .icon{
+
+        width:125px;
+        height:125px;
+
+    }
+
+    .profile-name{
+
+        font-size:1.85rem;
+
+    }
+
+    .job{
+
+        font-size:.95rem;
+
+    }
+
+    .card{
+
+        padding:22px;
+
+        border-radius:22px;
+
+    }
+
+    .card h2{
+
+        font-size:1.2rem;
+
+    }
+
+    .button{
+
+        padding:15px;
+
+        font-size:.95rem;
+
+    }
+
+    .welcome-icon{
+
+        font-size:4rem;
+
+    }
+
+    .welcome-title{
+
+        font-size:2.2rem;
+
+    }
+
+    body::before{
+
+        font-size:2.2rem;
+
+        letter-spacing:.9rem;
+
+        top:16%;
+
+    }
+
+    body::after{
+
+        font-size:1.8rem;
+
+        letter-spacing:.7rem;
+
+        bottom:15%;
+
+    }
+
+}
+
+
+/* ==========================================================
+   Reduced Motion
+========================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+
+        animation:none !important;
+
+        transition:none !important;
+
+    }
+
+}
+
+
+/* ==========================================================
+   Dark Mode Ready
+   ※ 今はまだ自動切替のみ。後でボタン式にできます。
+========================================================== */
+
+@media(prefers-color-scheme:dark){
+
+    :root{
+
+        --background:#101522;
+        --background2:#182033;
+
+        --card:rgba(255,255,255,.10);
+
+        --text:#f5f7fb;
+        --subtext:#c7cbd8;
+
+        --border:rgba(255,255,255,.16);
+
+        --shadow:
+            0 18px 45px rgba(0,0,0,.35);
+
+    }
+
+    #welcome-screen{
+
+        background:
+            linear-gradient(
+                135deg,
+                #101522,
+                #182033
+            );
+
+    }
+
+    .welcome-subtitle{
+
+        color:#c7cbd8;
+
+    }
+
+    .icon{
+
+        border-color:rgba(255,255,255,.85);
+
+    }
+
+    body::before,
+    body::after{
+
+        color:rgba(255,255,255,.055);
+
+    }
+
+}
