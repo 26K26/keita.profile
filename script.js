@@ -34,9 +34,19 @@ function initIntroScreen(){
         return;
     }
 
-    const alreadyPlayed = sessionStorage.getItem("introPlayed");
+    let alreadyPlayed = false;
 
-    if(alreadyPlayed === "true"){
+    try{
+
+        alreadyPlayed = sessionStorage.getItem("introPlayed") === "true";
+
+    }catch(error){
+
+        alreadyPlayed = false;
+
+    }
+
+    if(alreadyPlayed){
 
         introScreen.classList.add("hide");
         return;
@@ -46,7 +56,16 @@ function initIntroScreen(){
     const closeIntro = () => {
 
         introScreen.classList.add("hide");
-        sessionStorage.setItem("introPlayed", "true");
+
+        try{
+
+            sessionStorage.setItem("introPlayed", "true");
+
+        }catch(error){
+
+            console.log("sessionStorage is not available.");
+
+        }
 
     };
 
